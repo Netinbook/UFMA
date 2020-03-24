@@ -1,0 +1,225 @@
+%
+%				Preambulo feito do zero todo comentado para evitar a fadiga.
+%
+%				DATA: terça feira 01 de novembro de 2018
+%
+% Configuração da página
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	vmargin={3cm,2cm},
+	hmargin={3cm,2cm}
+}
+\usepackage[brazilian]{babel} 						%1º Idioma em Português
+\usepackage[utf8]{inputenc} 						%2º Permite Acentos ç, é, ô ...
+\usepackage[T1]{fontenc} 							% hifenização / Muitas fontes só funcionam com este complemento
+%\usepackage{pythontex}  							% Python em LaTeX
+%\usepackage{siunitx}	%Referente a PythonTex
+%\usepackage{pythontex}	%Referente a PythonTex
+\usepackage[thicklines]{cancel}						% Cancelar Frações APIN
+\renewcommand{\CancelColor}{\color{red}}			% Muda a cor de cancel para red
+\usepackage{xfrac}									% Este pacote fornece o comando \sfrac para criar frações inclinadas. 
+\usepackage{lmodern} 								% Matematica Complemento do \sfrac
+\usepackage{calligra} 								% Letra caligráfica
+\usepackage{lipsum}									% Texto automático para praticar LaTeX
+\usepackage{mathtools, amssymb, amsfonts, amsthm, latexsym, wasysym, siunitx} 	% Simbolos/Fonts Matemática
+%no preâmbulo do documento. O pacote mathtools carrega o pacote amsmath e, portanto, não há necessidade de \usepackage{amsmath} no preâmbulo se o mathtools for usado.
+\usepackage{bbold} 									% Escrita dos símbolos dos conjuntos (N,I,Z,Q,I)
+\usepackage{graphicx} 								% Inclusão de imagens
+\usepackage{framed}									% Destaca as resposta mais tem que ser utilizado com \definecolor{shadecolor}{gray}{.9}
+\usepackage{wrapfig}								% Inclusao de imagens ao lado de texto...
+\usepackage{float}									% Ajuda na hora de inserir imagens (Sobre a localização)"H"
+\usepackage[final]{pdfpages} 						%Importar aquivos pdf \includepdf[pages=-]{arq.pdf}
+\usepackage{tikz, tkz-base, tkz-fct} 				% Desenhos gráficos em LaTeX
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\usepackage{verbatim} 								% Comentários em múltiplas linhas
+\usepackage{multicol} 								% Texto em colunas
+\usepackage{xcolor}									% Cores font ...
+% [usenames, dvipsnames] Opicional					% Xcolor mais poderoso... 
+\usepackage{pstricks} 								% Cores básicas {\red vermelho} {\blue azul}
+\definecolor{minhacor}{RGB}{85,158,151}				% Cria uma cor personalizada RGB/rgb/html
+%\usepackage{draftwatermark} %Marca dágua
+%\usepackage{ifthen}									%Permite tomada de decisoes
+
+
+\usepackage{fancybox}								% Responsavl pelas caixas de textos maravilhosas click Lembre-se: abrir documentação
+
+%====================================================== FONTES ================================================================================================
+% Begim Fontes
+%\usepackage{fix-cm} % Permite aumentar o tamanho da fonte de fontes especíoficas além das padrões do LaTex
+\usepackage{anyfontsize} 							% El tamaño de la fuente se puede controlar usando el paquete anyfontsize. podemos usar el comando \fontsize{t}{s}
+			%\everymath{\displaystyle}	% Fontes normais em matemática sem encolher
+\usepackage{wedn}
+% End Fonts
+%================================================================================================
+\usepackage{qrcode}									% QR Code em Latex:
+\usepackage{awesomebox}								% Alert/Advert/MsgBox
+						%\notebox{Lorem ipsum...}\\
+						%\tipbox{Lorem ipsum...}\\
+						%\warningbox{Lorem ipsum...}\\
+						%\cautionbox{Lorem ipsum...}\\
+						%\importantbox{Lorem ipsum...}
+\usepackage[shortlabels]{enumitem} 					% Versión 3.0 o + Personalizar el entorno “enumerate”.
+\usepackage{polynom} 								% Resolucao de Polinomios
+\usepackage{xlop}									% Deseha conta de dividir Ex: \opidiv{127}{7}\qquad\opdiv{127}{7}
+\usepackage{venndiagram}							% Confeccao de Diagramas
+\usepackage{booktabs} 								% Para tener opciones adicionales en el entorno tabular se puede utilizar el paquete booktabs
+\usepackage{indentfirst}							% Ober identação da primeira linha de cada parágrafo é melhor deixar comentado \0/
+\setlength{\parindent}{1,0cm}							% Deixa a identação em 0 (Impede a identação)
+%\usepackage{parskip}								% Deixa um espaço entre parágrafo. EU COMENTEI O MESMO POIS O EXPASSO ESTAVA MUITO GRANDE
+%\setlength{\parskip}{0,2cm} 							% Altera o parskip para 1cm - Distancia entre os parágrafos.
+%\usepackage{setspace}								% Altera o espaçamento entre linhas
+% https://aprendolatex.wordpress.com/tag/onehalfspacing/
+												%	\onehalfspacing		% 1.5
+													%\doublespacing		% Espacaento duplo
+													%\setstretch{3}		% Espacamento personalizado
+													%\singlespacing		% Espacamento simples que é o padrão
+% Referencias - links
+\usepackage[hyphens]{url}
+\usepackage[breaklinks,colorlinks=true,linkcolor=red,citecolor=red, urlcolor=blue]{hyperref}
+\usepackage{fancyvrb} 								% Notas de rodapé
+\usepackage[normalem]{ulem} % Corrige o problema que ulem afeta em alguns estilos de bibliografia onde o texto em itálico é então sublinhado 
+\usepackage{ulem} 									% Maneira de sublinhar/taxar um texto qualquer \sout{texto} ou \xout{texto}
+\everymath{\displaystyle}							% Referente ao tamanho da fonte nos termos matemáticos ou em limites/derivadas
+
+%============================== A BAIXO FICAM OS COMANDOS RENOMEADOS PARA AGILIZAR COMANDOS USADOS RECENTES====================
+\newcommand{\R}{\mathbb{R}}								% Conjunto dos números Reais
+\newcommand{\N}{\mathbb{N}}								% Conjunto dos números Naturais
+\newcommand{\Z}{\mathbb{Z}}								% Conjunto dos números Inteiros
+\newcommand{\Q}{\mathbb{Q}}								% Conjunto dos números Racionais
+\newcommand{\PR}[1]{\ensuremath{\left[#1\right]}} 		%\PR que trabalha com Parênteses Rectos
+\newcommand{\PC}[1]{$\scriptstyle#1${\left(#1\right)}}	%\PC para Parênteses Curvos e a terceira, para chavetas EXEMPLO: \PC{\frac{1}{2}}
+\newcommand{\divpor}[2]{\opidiv{#1}{#2}}				% Traduzindo para facilitar...
+\newcommand{\chav}[1]{\ensuremath{\left\{#1\right\}}}	%\chav adivinha... ;-)
+\newcommand\vermelho[1]{\textcolor{red}{#1}}			% Vermelho
+\newcommand\azul[1]{\textcolor{blue}{#1}}				% Azul
+\newcommand\tab[1][1cm]{\hspace*{#1}}					% Tab funciona em ambiente matemático ou não.
+\newcommand{\sen}{\mathop{\rm sen}\nolimits} 			% Seno
+\newcommand{\Bascara}{x=\dfrac{-b\pm\sqrt{\Delta}}{2a}}	% Fórmula de Báscara
+\newcommand{\raiz}{\sqrt}								% Traduzindo para facilitar...
+
+% As 4 linhas abaixo representam aquela lista maravilhosa com efeito magnifico
+\newcommand*{\itembolasazules}[1]{ % bolas 3D
+	\footnotesize\protect\tikz[baseline=-3pt] %
+	\protect\node[scale=.7, circle, shade, ball 
+	color=blue]{\color{white}\Large\bf#1};}
+
+\definecolor{shadecolor}{gray}{.9}			% Esta linha foi referenciada logo no começo do preambulo serve para destacar as respostas
+
+%================== EURECA SEUS PROBLEMAS ACABARAM ======
+\DeclareMathOperator{\implica}{\Rightarrow}
+\DeclareMathOperator{\maiorigual}{\ge}
+\DeclareMathOperator{\menorigual}{\le}
+\DeclareMathOperator{\diferente}{\neq}
+\DeclareMathOperator{\equivale}{\Leftrightarrow}
+\DeclareMathOperator{\reticencia}{\dots}
+\DeclareMathOperator{\vezes}{\times}
+\DeclareMathOperator{\uniao}{\cup}
+\DeclareMathOperator{\inter}{\cap}
+\DeclareMathOperator{\paratodo}{\forall}
+\DeclareMathOperator{\vazio}{\emptyset}
+
+
+%============================== A CIMA FICAM OS COMANDOS RENOMEADOS ====================
+
+\begin{comment}
+
+
+71164170368 
+
+beatriz 
+
+NASCIMENTO  
+
+ABDENEGO 
+
+
+Outro parceiro
+
+Dyones Santos da Costa.
+
+[20:55, 25/1/2019] +55 98 9191-0679: CPF. 051.303.203-79
+[20:56, 25/1/2019] +55 98 9191-0679: senha 34761433
+ 
+
+SENHA: 
+
+CPF PATRÃO 
+
+
+%----------------------------------- mais dicas ----------------------------------
+$
+f(x)=
+\left\{ 
+    \begin{array}{rcl}
+        x^2+1   & \mbox{se} & x\geq 0\\
+                &           &\\
+        \ln|x| & \mbox{si} & x< 0\\
+    \end{array}
+\right. 
+$
+apin http://xvideos.blog.br/sente-prazer-com-o-pau-do-namorado-na-boca/
+%--------------------------------- modelo de sistema de equação-------------------
+\end{comment}
+
+% Configuração da página
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	vmargin={2cm,2cm},
+	hmargin={2cm,2cm}
+}
+
+%Minha Assinatura:
+%\footnote{\LARGE{$\eta\varepsilon\tau\iota\eta  $}}\\
+
+
+\begin{comment}
+Observe a lista abaixo com alguns exemplos de prefixos:
+
+ch:    capítulo
+sec:  seção
+subsec:  subseção
+fig:  figura
+tab:  tabela
+eq:    equação
+lst:  código fonte
+itm:  lista de itens
+alg:  algorítmo
+app:  apêndice
+
+Para nomearmos os objetos, utilizamos o comando \label{}
+
+Agora, para referenciarmos algo, basta utilizarmos o comando \ref{}.
+
+
+exemplos:
+\section{Algoritmos padrão} \label{sec:algoritmos}
+
+Voltemos à seção \ref{sec:algoritmos}, onde podemos observar...
+
+Ainda temos mais um comando especial, que nos mostra o número da página onde encontra-se o elemento: \pageref{}.
+
+Como podemos ver na figura \ref{img:proj-estacionamento}, que pode ser vista na página \pageref{img:proj-estacionamento}, o projeto final...
+
+
+DICAS IMPORTANTES
+
+% Site para baixar no Scribd em 04/09/19: https://www.scrdownloader.com/
+% pacote que trata de questoes aleatórias  https://ctan.org/pkg/mcexam
+% http://www.nead.ufma.br/portalava/?id=1|https://www.udemy.com/join/login-popup/?next=/home/my-courses/learning/|https://www.google.com.br/|https://github.com/Ferlinuxdebian/Debian-documentacao/blob/master/README.md|https://matrixcalc.org/pt/|https://pt.symbolab.com/|https://dlscrib.com/|https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-pt_BR.md#vim|https://www.tecmundo.com.br/iphone/2607-ios-como-criar-ringtones-no-itunes-10.htm%
+% RM979848435CN
+% RX868407165CN
+% RL808060917CN
+%	https://manas.tungare.name/software/isbn-to-bibtex	%Biblioteca automatica
+%	http://www.codecogs.com/latex/eqneditor.php		%Editor de equacao para treinar
+%	http://www.tug.dk/FontCatalogue/alphfonts.html \Catalogo de Fontes online em LaTeX
+%	Site que ajuda na confecao de tabela em latex
+%	https://www.tablesgenerator.com/#
+%	https://www.latex-tables.com/
+%	https://www.mathe-fa.de/pt % Fazer gráficos sem programas
+%	Ajuda na fatoracoes
+%	sudo mkfs.exfat -n hardDisk /dev/sdc2
+%	O comando acima cria uma unidade exfat mais poderosa que o fat32 pois suporta arquivos acima de 4GB
+\end{comment}
